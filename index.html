@@ -1,1 +1,93 @@
 # renukabhosle8828.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Megha!</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe2f3, #f6f9ff);
+      text-align: center;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    button {
+      background: #ff4d6d;
+      border: none;
+      padding: 12px 20px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 1rem;
+    }
+
+    .slides {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .slide {
+      display: none;
+      animation: fade 1s ease-in-out;
+      font-size: 20px;
+      padding: 20px;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Happy Birthday, Megha! 🎂</h1>
+    <p>Meri taraf se tujhe ek choti si magical journey ❤️</p>
+    <button onclick="startWishes()">Walk Down Memory Lane</button>
+
+    <div class="slides" id="slides"></div>
+  </div>
+
+  <script>
+    const wishes = [
+      "Tu meri life ki best person hai ❤️",
+      "Bachpan se saath hain hum, isliye ek dusre ko bina bole hi sab samajh jaate hain.",
+      "Jo bond humare beech hai, woh kisi magic se kam nahi ✨",
+      "Tere native place jaake jo maza aaya, woh kabhi nahi bhoolungi 🏡💞",
+      "Teri family ne bhi mujhe utna hi apna feel karwaya, jaise tu karti hai.",
+      "Bas chahti hoon ki yeh bonding humari life long rahe...",
+      "Aur kal ko humare bachhe bhi best friends banein, jaise hum hai 👭👶💫",
+      "Love you forever, meri jaan! 💖",
+      "🎊 Tera Bday ho utna hi khubsurat jitni tu hai! 🎊"
+    ];
+
+    let currentSlide = 0;
+
+    function startWishes() {
+      const slides = document.getElementById("slides");
+      slides.style.display = "block";
+      slides.innerHTML = `<div class='slide'>${wishes[currentSlide]}</div>`;
+
+      const interval = setInterval(() => {
+        currentSlide++;
+        if (currentSlide < wishes.length) {
+          slides.innerHTML = `<div class='slide'>${wishes[currentSlide]}</div>`;
+        } else {
+          clearInterval(interval);
+          slides.innerHTML = `<div class='slide'><h2>🎁 Surprise Complete! 🎁</h2><p>Check your WhatsApp for a special voice note! 🎶</p></div>`;
+        }
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
